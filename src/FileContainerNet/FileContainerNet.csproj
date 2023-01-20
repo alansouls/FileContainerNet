@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Authors>Alan Maia</Authors>
+    <Company>Alan Maia</Company>
+    <Description>Easy and simple to use file container abstraction, includes Azure Storage Blob implementation</Description>
+    <PackageProjectUrl>https://github.com/alansouls/FileContainerNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/alansouls/FileContainerNet</RepositoryUrl>
+    <PackageTags>File;Container;Azure;Blob;Storage</PackageTags>
+    <PackageReleaseNotes>Versão inicial</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
