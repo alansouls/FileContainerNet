@@ -1,21 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Authors>Alan Maia</Authors>
-    <Company>Alan Maia</Company>
-    <Description>Easy and simple to use file container abstraction, includes Azure Storage Blob implementation</Description>
-    <PackageProjectUrl>https://github.com/alansouls/FileContainerNet</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/alansouls/FileContainerNet</RepositoryUrl>
-    <PackageTags>File;Container;Azure;Blob;Storage</PackageTags>
-    <PackageReleaseNotes>Versão inicial</PackageReleaseNotes>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Authors>Alan Maia</Authors>
+		<Company>Alan Maia</Company>
+		<Description>Easy and simple to use file container abstraction, includes Azure Storage Blob implementation</Description>
+		<PackageProjectUrl>https://github.com/alansouls/FileContainerNet</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/alansouls/FileContainerNet</RepositoryUrl>
+		<PackageTags>File;Container;Azure;Blob;Storage</PackageTags>
+		<PackageReleaseNotes>Versão inicial</PackageReleaseNotes>
+		<PackageVersion>1.1.0</PackageVersion>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.22.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.22.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+	</ItemGroup>
 
 </Project>
