@@ -1,11 +1,6 @@
-﻿using Azure.Storage.Blobs;
+﻿using Azure;
+using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileContainerNet.AzureStorage
 {
@@ -23,7 +18,7 @@ namespace FileContainerNet.AzureStorage
             _blobService = new BlobServiceClient(connectionString);
             _currentContainer = _blobService.GetBlobContainerClient(defaultContainer);
             _currentContainer.CreateIfNotExists();
-            _currentContainer.SetAccessPolicy(PublicAccessType.Blob);
+            _currentContainer.SetAccessPolicy(PublicAccessType.None);
         }
 
         public void UseContainer(string container)
@@ -115,6 +110,17 @@ namespace FileContainerNet.AzureStorage
             var blob = _currentContainer.GetBlobClient(path);
 
             return await blob.OpenReadAsync();
+        }
+
+        public string GetBlobUriWithSasToken(string uriString)
+        {
+            var containerUri = new Uri(_currentContainer.Uri + "/");
+
+            var uri = new Uri(uriString);
+
+            var blob = _currentContainer.GetBlobClient(containerUri.MakeRelativeUri(uri).ToString());
+            return blob.GenerateSasUri(Azure.Storage.Sas.BlobSasPermissions.Read, DateTimeOffset.UtcNow.AddHours(1))
+                .ToString();
         }
     }
 }

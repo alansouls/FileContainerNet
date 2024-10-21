@@ -23,5 +23,7 @@ namespace FileContainerNet
         Task<Uri> StoreFileAsync(string path, byte[] content);
         Task<byte[]> RetreiveFileAsync(string path);
         Task DeleteFileAsync(string path);
+
+        string GetBlobUriWithSasToken(string uriString);
     }
 }
